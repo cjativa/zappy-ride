@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "serverless offline start --dontPrintOutput --noTimeout"
+    "dev": "serverless offline start --dontPrintOutput --noTimeout --useChildProcesses"
   },
   "author": "Christopher Daniel Jativa",
   "license": "ISC",
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.57",
     "@types/node": "^14.0.14",
     "serverless": "^1.73.1",
     "serverless-offline": "^6.4.0",
