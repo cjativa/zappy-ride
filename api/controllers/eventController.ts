@@ -4,6 +4,7 @@ import EventService from "../services/eventService";
 /** Controllers for handling API endpoint calls */
 export default class EventController {
 
+    /** Handles executing the callback to return the response to the API consumer */
     private static handleResponse = (callback: Callback, body: any) => {
 
         const response = {

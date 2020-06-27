@@ -4,7 +4,6 @@ import ApiRouter from './api/index';
 // modern module syntax
 export const handler = (event: APIGatewayEvent, context: Context, callback: Callback) => {
 
-    console.log(`You hit /events`);
-
+    // Hand-off the event to our custom api router
     ApiRouter(event, context, callback);
 }

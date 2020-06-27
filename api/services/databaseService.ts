@@ -1,6 +1,7 @@
 import { Pool } from 'pg';
 import Config from '../config';
 
+// Create the pool of connections that we can use
 const pool = new Pool({
     host: Config.databaseHost,
     database: Config.databaseName,
@@ -13,6 +14,7 @@ export default class Database {
 
     private static pool: Pool = pool;
 
+    /** Performs the provided query on the database, with the provided values array, if provided */
     public static query = async (query: string, values?: any[]) => {
 
         // Get a client from the pool to run this query
@@ -26,6 +28,7 @@ export default class Database {
             if (values) response = await client.query(query, values);
             else response = await client.query(query);
 
+            // Return only the rows, node-pg returns a lot of unneeded info
             return response?.rows;
         }
 
