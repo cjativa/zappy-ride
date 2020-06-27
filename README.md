@@ -36,4 +36,27 @@ The following technology stack was used to build this simplistic endpoint
 
 ## Deploying to AWS
 
-1. Run `npm run deploy` to start the deployment process
+Serverless requires credentials to be able to deploy to AWS. Typically, you provision a set of programmatic user and then generate credentials for that user (AWS Access Key ID/Secret Access Key pair) to assign to Serverless. You should only the permissions to this user that are needed by the API to performs its needed functions.
+
+For this demonstration, I went to top-right of the AWS Console Menu > My Security Credentials > and generated an Access Key ID/Secret Access Key pair based off my user account. In Production, I would create a new programmatic user with restricted access to AWS services and generate the credentials for that restricted user so as to sandbox them to only the services they need access to (in this case, RDS, Lambda, API Gateway).
+
+
+1. Run 
+
+    ```
+    EXPORT ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
+    EXPORT SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
+    ```
+
+    to set the credentials for Serverless to use to do the deployment.
+
+2. Provision and create your PostgreSQL database in AWS RDS. This repository does not perform that for you. Ensure you make note of the database host, name, user, and password. You will also have to ensure you set "Public Accessibility" to your database to ON
+
+3. Run `npm run deploy` to start the deployment process of your code to API Gateway/Lambda
+
+4. Update the environment variables in your newly deployed Lambda function accordingly with the needed variables as specified by `.env.template`
+
+5. (Optional) You can connect to your remote database and restore the database dump included in this repository to your RDS database.
+
+## Live Environment
+

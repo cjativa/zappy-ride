@@ -22,7 +22,8 @@ const ApiRouter = (event: APIGatewayEvent, context: Context, callback: Callback)
 
 
         default:
-            return callback(null, { statusCode: 503, message: "Unsupported method" });
+            return EventController.readEvents(event, context, callback);
+            // return callback(null, { statusCode: 503, message: "Unsupported method" });
     }
 
 };

@@ -11,16 +11,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.57",
-    "@types/dotenv": "^8.2.0",
     "@types/node": "^14.0.14",
     "@types/pg": "^7.14.3",
-    "serverless": "^1.73.1",
     "serverless-dotenv-plugin": "^2.4.2",
     "serverless-offline": "^6.4.0",
-    "serverless-plugin-typescript": "^1.1.9"
+    "serverless-plugin-typescript": "^1.1.7"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "pg": "^8.2.1"
   }
 }
