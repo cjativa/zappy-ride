@@ -16,9 +16,9 @@ It exposes a single endpoint that can be accessed with different HTTP methods to
 
 The following technology stack was used to build this simplistic endpoint
 
-- (Serverless)[https://www.serverless.com/] - The Serverless framework is used to enable local development of the API and for provisioning the needed resources required in AWS (i.e. AWS Lambda and API Gateway)
+- [Serverless](https://www.serverless.com/) - The Serverless framework is used to enable local development of the API and for provisioning the needed resources required in AWS (i.e. AWS Lambda and API Gateway)
 
-- (node-pg)[https://node-postgres.com/] - The node-pg library is used for interacting with the PostgreSQL database
+- [node-pg](https://node-postgres.com/) - The node-pg library is used for interacting with the PostgreSQL database
 
 - PostgreSQL - PostgreSQL was the database of choice for persisting the events
 
