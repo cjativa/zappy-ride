@@ -5,69 +5,76 @@ import EventService from "../services/eventService";
 export default class EventController {
 
     /** Handles executing the callback to return the response to the API consumer */
-    private static handleResponse = (callback: Callback, body: any) => {
+    private static handleResponse = (body: any) => {
 
         const response = {
             statusCode: 200,
             body: JSON.stringify(body)
         };
 
-        callback(null, response);
+        return response;
     };
 
     /** Returns a JSON list of all events in the database */
-    public static readEvents = async (event: APIGatewayEvent, context: Context, callback: Callback) => {
+    public static readEvents = async (event: APIGatewayEvent) => {
+
+        const s = Date.now()
 
         const events = await EventService.getEvents();
-        EventController.handleResponse(callback, events);
+
+        const e = Date.now();
+
+        console.log(`Time for call ${(e - s) / 1000} seconds`);
+        return EventController.handleResponse(events);
     };
 
     /** Adds a new event in the database */
-    public static createEvent = async (event: APIGatewayEvent, context: Context, callback: Callback) => {
+    public static createEvent = async (event: APIGatewayEvent) => {
 
         // Get the needed fields for creating an event and validate them
         const { organizer, venue, date } = JSON.parse(event.body!);
-        const inputValid = EventController.validateInput({ organizer, venue, date }, event.httpMethod, callback);
+        const validation = EventController.validateInput({ organizer, venue, date }, event.httpMethod);
 
-        if (!inputValid) return;
+        if (!validation.inputValid) return validation.response;
 
         // Create the event and return the result
         const result = await EventService.createEvent(organizer, venue, date);
-        EventController.handleResponse(callback, result);
+        return EventController.handleResponse(result);
     };
 
     /** Updates an event in the database */
-    public static updateEvent = async (event: APIGatewayEvent, context: Context, callback: Callback) => {
+    public static updateEvent = async (event: APIGatewayEvent) => {
 
         const { organizer, venue, date, id } = JSON.parse(event.body!);
-        const inputValid = EventController.validateInput({ id }, event.httpMethod, callback);
+        const validation = EventController.validateInput({ id }, event.httpMethod);
 
-        if (!inputValid) return;
+        if (!validation.inputValid) return validation.response;
 
         // Update the event and return the results
         const result = await EventService.updateEvent(id, organizer, venue, date);
-        EventController.handleResponse(callback, result);
+        return EventController.handleResponse(result);
     };
 
     /** Deletes an event in the database */
-    public static deleteEvent = async (event: APIGatewayEvent, context: Context, callback: Callback) => {
+    public static deleteEvent = async (event: APIGatewayEvent) => {
 
         const { id } = JSON.parse(event.body!);
-        const inputValid = EventController.validateInput({ id }, event.httpMethod, callback);
+        const validation = EventController.validateInput({ id }, event.httpMethod);
 
-        if (!inputValid) return;
+        if (!validation.inputValid) return validation.response;
 
         // Update the event and return the results
         const result = await EventService.deleteEvent(id);
-        EventController.handleResponse(callback, result);
+        return EventController.handleResponse(result);
     };
 
     /** Handles basic input validation provided by the endpoint consumers. Handles responding to the consumers if input is invalid */
-    private static validateInput = (args, method: APIGatewayEvent['httpMethod'], callback: Callback): boolean => {
+    private static validateInput = (args, method: APIGatewayEvent['httpMethod']) => {
 
         // Track invalid inputs
         const invalidInputs = [];
         let inputValid = true;
+        let response;
 
         for (let [key, value] of Object.entries(args)) {
 
@@ -100,16 +107,15 @@ export default class EventController {
                     break;
             }
 
-            const response = {
+            response = {
                 statusCode: 400,
                 body: JSON.stringify({
                     message: `Invalid request to API resource for ${actionText}. Your request did not provide the following fields: [${invalidInputs.toString()}].`
                 })
             };
 
-            callback(null, response);
         }
 
-        return inputValid;
+        return { inputValid, response };
     };
 };

@@ -9,20 +9,20 @@ const ApiRouter = (event: APIGatewayEvent, context: Context, callback: Callback)
     switch (event.httpMethod) {
 
         case 'GET':
-            return EventController.readEvents(event, context, callback);
+            return EventController.readEvents(event);
 
         case 'POST':
-            return EventController.createEvent(event, context, callback);
+            return EventController.createEvent(event);
 
         case 'PUT':
-            return EventController.updateEvent(event, context, callback);
+            return EventController.updateEvent(event);
 
         case 'DELETE':
-            return EventController.deleteEvent(event, context, callback);
+            return EventController.deleteEvent(event);
 
 
         default:
-            return EventController.readEvents(event, context, callback);
+            return EventController.readEvents(event);
             // return callback(null, { statusCode: 503, message: "Unsupported method" });
     }
 
