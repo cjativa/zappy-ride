@@ -62,16 +62,16 @@ For this demonstration, I went to top-right of the AWS Console Menu > My Securit
 
 • URL of the publicly accessible endpoint - https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events
 
-• Postman collection that accesses the endpoint across methods - [./zappyride.postman_collection.json](Postman Collection)
+• Postman collection that accesses the endpoint across methods - [https://github.com/cjativa/zappy-ride/blob/master/zappyride.postman_collection.json](Postman Collection)
 
 • Description of your setup and pointers for us to review your work in AWS 
 
-    My API is deployed on AWS. I described the architecture above but you can find the relative information here
-    - RDS https://console.aws.amazon.com/rds/home?region=us-east-1#database:id=zappy-ride-test;is-cluster=false
-    - Lambda https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/zappy-ride-prod-events?tab=configuration
-    - API Gateway https://console.aws.amazon.com/apigateway/home?region=us-east-1#/apis/sox3vnk5wc/resources/reqqpnraqe
+My API is deployed on AWS. I described the architecture above but you can find the relative information here
+ - RDS https://console.aws.amazon.com/rds/home?region=us-east-1#database:id=zappy-ride-test;is-cluster=false
+ - Lambda https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/zappy-ride-prod-events?tab=configuration
+ - API Gateway https://console.aws.amazon.com/apigateway/home?region=us-east-1#/apis/sox3vnk5wc/resources/reqqpnraqe
 
-    Please ping me if the database credentials are needed. The high-level architecture is that a handler is exposed by the Lambda and then the [./api/index.ts](Index File) routes the request to the appropriate endpoint controller (i.e. for GET/POST/PUT/DELETE). 
+    Please ping me if the database credentials are needed. The high-level architecture is that a handler is exposed by the Lambda and then the [https://github.com/cjativa/zappy-ride/blob/master/api/index.ts](Index File) routes the request to the appropriate endpoint controller (i.e. for GET/POST/PUT/DELETE). 
 
     The controllers then return the appropriate response, based on whether or not the provided input was valid, so there is basic input validation on the payload provided by the consumer.
 
