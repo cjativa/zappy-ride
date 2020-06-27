@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "0ae8d4b8-82c2-4c33-89fa-75822e6d539c",
+		"name": "zappyride",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Hyundai Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizer\": \"Hyundai\",\r\n    \"venue\": \"Hyundai Stadium\",\r\n    \"date\": \"June 27th 2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Tesla Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizer\": \"Tesla\",\r\n    \"venue\": \"Tesla HQ\",\r\n    \"date\": \"June 7th 2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Honda Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizer\": \"Honda\",\r\n    \"venue\": \"Las Vegas Auto Mall\",\r\n    \"date\": \"July 10th 2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Tesla Event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9,\r\n    \"organizer\": \"Tesla Inc. 2020\",\r\n    \"venue\": \"Tesla HQ, In California\",\r\n    \"date\": \"August 9th 2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Hyundai Event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"organizer\": \"Hyundai Inc.\",\r\n    \"venue\": \"Hyundai Factory, North America\",\r\n    \"date\": \"June 23rd 2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Honda Event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizer\": \"Honda Inc.\",\r\n    \"venue\": \"Remote due to current circumstances\",\r\n    \"date\": \"First week of August\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Honda Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Hyundai Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Tesla Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sox3vnk5wc.execute-api.us-east-1.amazonaws.com/prod/events ",
+					"protocol": "https",
+					"host": [
+						"sox3vnk5wc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"events "
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
