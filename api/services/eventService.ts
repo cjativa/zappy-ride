@@ -1,5 +1,6 @@
 import Database from './databaseService';
 
+/** Class responsible for performs the CRUD updates to the "events" table */
 export default class EventService {
 
     /** Performs actions in the database for creating an event */
