@@ -4,13 +4,13 @@ Hello, this is the implementation of the API requested by Zappy Ride.
 
 It exposes a single endpoint that can be accessed with different HTTP methods to perform different functions
 
-- GET /events - Retrieves the JSON list of all events that currently exist in the database
+- **GET /events** - Retrieves the JSON list of all events that currently exist in the database
 
-- POST /events - Adds a new event in the database
+- **POST /events** - Adds a new event in the database
 
-- PUT /events - Updates an existing event in the database
+- **PUT /events** - Updates an existing event in the database
  
-- DELETE /events - Deletes an existing event from the database
+- **DELETE /events** - Deletes an existing event from the database
 
 ## Technology Stack
 
