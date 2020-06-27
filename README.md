@@ -23,3 +23,17 @@ The following technology stack was used to build this simplistic endpoint
 - PostgreSQL - PostgreSQL was the database of choice for persisting the events
 
 - Node - This API was developed in Node (TypeScript) 
+
+
+## Installation for Local Development
+
+1. Run `cp .env.template .env` to create your own custom `.env` file
+
+2. Run `npm install` to install all of the needed dependencies for local development
+
+3. Run `npm run dev` to start the offline API server. It will reload in real-time as you make changes to your TypeScript files and save them
+
+
+## Deploying to AWS
+
+1. Run `npm run deploy` to start the deployment process

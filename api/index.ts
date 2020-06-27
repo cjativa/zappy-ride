@@ -14,7 +14,7 @@ const ApiRouter = (event: APIGatewayEvent, context: Context, callback: Callback)
         case 'POST':
             return EventController.createEvent(event, context, callback);
 
-        case 'UPDATE':
+        case 'PUT':
             return EventController.updateEvent(event, context, callback);
 
         case 'DELETE':
@@ -22,7 +22,7 @@ const ApiRouter = (event: APIGatewayEvent, context: Context, callback: Callback)
 
 
         default:
-            break;
+            return callback(null, { statusCode: 503, message: "Unsupported method" });
     }
 
 };
