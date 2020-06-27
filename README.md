@@ -74,5 +74,7 @@ My API is deployed on AWS. I described the architecture above but you can find t
     Please ping me if the database credentials are needed. The high-level architecture is that a handler is exposed by the Lambda and then the [Index File](https://github.com/cjativa/zappy-ride/blob/master/api/index.ts) routes the request to the appropriate endpoint controller (i.e. for GET/POST/PUT/DELETE). It functions similarly to an Express Router.
 
     The controllers then return the appropriate response, based on whether or not the provided input was valid, so there is basic input validation on the payload provided by the consumer.
+    
+    You can also find an export of the database used for the project here [Database Export](https://github.com/cjativa/zappy-ride/blob/master/dump-zppy_ride-202006270946.backup)
 
 • API source code (you may use GitHub for source control) - This repository
